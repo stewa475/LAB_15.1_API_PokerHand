@@ -1,0 +1,38 @@
+﻿
+@model Deck
+
+@{
+    ViewData["Title"] = "Poker Hand";
+}
+
+<h1>Poker Hand</h1>
+<a href="/DeckOfCards/Deck/@Model.deck_id" class="btn btn-dark" onclick="return confirm('Draw 5 more cards?')">Draw</a>
+<h2>Deck: @ViewData["DeckId"]</h2>
+
+@*<ul>
+        @foreach (DeckCards c in Model.Cards)
+        {
+            <li>
+                <strong>@c.Code: @c.Value of @c.Suit</strong><br />
+                <img src="@c.Image" />
+            </li>
+        }
+    </ul>*@
+
+
+<table class="table-hover">
+
+        @foreach (DeckCards c in Model.Cards)
+        {
+            <tr>
+                <img src="@c.Image" style="width: 110px; height: 160px" />&nbsp;
+            </tr>
+            <tr>
+                <th>
+                    <strong>@c.Code: @c.Value of @c.Suit</strong>
+                </th>
+            </tr>
+            }
+    </table>
+
+
